@@ -5,7 +5,7 @@
 # Project 1: Navigation
 
 ### Summary
-#### Edit 07/06/2021
+##### (Edit 07/06/2021)
 This repo contains following items for the project 1 of the nano-degree:
 1. Python notebook file: Navigation.ipynb file containing fully functional code, all code cells executed and displaying output, and all questions answered.
 2. A README.md markdown file with a description of your code (the one we are reading now :))
@@ -13,7 +13,7 @@ This repo contains following items for the project 1 of the nano-degree:
 4. File with the saved model weights of the successful agent: checkpoint.pt.
 
 ### Dependencies
-#### Edit 07/07/2021
+##### (Edit 07/07/2021)
 To set up the environment and run the code for this project, please follow the steps below:
 1. Create (and activate) a new environment with Python 3.6.
 
