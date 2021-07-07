@@ -4,6 +4,13 @@
 
 # Project 1: Navigation
 
+### Edit 07/06/2021:
+This repo contains following items for the project 1 of the nano-degree:
+1. Python notebook file: Navigation.ipynb file containing fully functional code, all code cells executed and displaying output, and all questions answered.
+2. A README.md markdown file with a description of your code (the one we are reading now :))
+3. An HTML or PDF export of the project report with the name Report.html or Report.pdf.
+4. File with the saved model weights of the successful agent: checkpoint.pt.
+
 ### Introduction
 
 For this project, you will train an agent to navigate (and collect bananas!) in a large, square world.  
