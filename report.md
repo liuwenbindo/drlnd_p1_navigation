@@ -24,6 +24,21 @@ Instead of using the action/state/reward of each step in the training process to
 ##### b. Separate network for generating target in the Q-learning update
 We use a separate network to generate the target objective function value when updating the network parameters. (As objective function is related to the Q values of the next state) For every C updates, we clone the network Q to obtain a target network Q' and use Q' to generate the Q-learning targets in the update step. This makes the calculation more stable, as increasing Q(s_t, a) will also increase Q(s_t+1, a), so if we use the same network for target, we are actually letting the network to chase itself in the optimization process (like hanging a carrot in front of a donkey while we ride the donkey). Generating the target using an older set of parameters adds a delay between the time an update to Q is made and the time the update affects the targets, making divergence or oscillations much more unlikely.
 
+#### Hyperparameters
+Following hyperparameters are being applied in this model:
+##### 1. Number of layers and number of nodes in each layer
+This Q-Network uses 3 layers, and there are 512, 1024, and 4 nodes separately in each layer.
+##### 2. Learning rate for the network update
+The learning rate for updating the parameters is set to 5e-4.
+##### 3. Discount rate for calculating expected future rewards
+When calculating expected reward of actions, we need to apply a discount rate for the rewards in future time-stamps. Here the discount rate is set to 0.99.
+##### 4. Replay buffer size and sample size
+We apply a replay buffer with size of 1e5 when training the network, and everytime we select a mini-batch of 64 samples randomly from the memory buffer.
+##### 5. Time steps between two updates of the network
+For each 4 time steps, we do one update of the network in the training process.
+##### 6. Interpolation parameter when soft updating the target network
+When updating the target network with the local network parameters, we apply a interpolation parameter τ being used as: θ_target = τ*θ_local + (1 - τ)*θ_target. Here we apply τ = 1e-3.
+
 ### 2. Testing Result
 The agent was able to successfully solve the environment within ~1100 episodes. Please see the graph below for the score achieved after each episode in the training process:
 
